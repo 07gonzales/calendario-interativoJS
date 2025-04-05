@@ -10,7 +10,7 @@ function colorirDia(){
     }
     else{
         if((days>0) && (days<=30)){
-            let td = calendar.getElementsByTagName('td');
+            let td = calendar.getElementsByTagName('td')[parseInt(days)+1];
             td.style.backgroundColor = color;
         }else{
             alert("Favor informar uma data cosntante no calendário");
@@ -18,4 +18,24 @@ function colorirDia(){
     }
 
     var elementos = document.querySelectorAll('td');
+
+    var contadorAzul=0, contadorVerde=0, contadorRosa=0, contadorRoxo=0;
+    
+    for(let i=0; i < elementos.length; i++){
+        var estilo = window.getComputedStyle(elementos[i]);
+        var corEstilo = estilo.backgroundColor;
+
+        if(corEstilo === "rgb(173, 216, 230)" || corEstilo === "lightblue") {
+            contadorAzul++;
+        } else if(corEstilo === "rgb(152, 251, 152)" || corEstilo === "palegreen"){
+            contadorVerde++;
+        } else if (corEstilo === "rgb(255, 182, 193)" || corEstilo === "lightpink") {
+            contadorRosa++;
+        } else if (corEstilo === "rgb(106, 90, 205)" || corEstilo === "slateblue") {
+            contadorRoxo++;
+        }
+    }
 }
+
+document.getElementById("contadorAzul").textContent = contadorAzul;
+
