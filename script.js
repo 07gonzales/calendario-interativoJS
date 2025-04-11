@@ -35,7 +35,10 @@ function colorirDia(){
             contadorRoxo++;
         }
     }
+    document.getElementById("contadorAzul").innerText = contadorAzul;
+document.getElementById("contadorVerde").innerText = contadorVerde;
+document.getElementById("contadorRosa").innerText = contadorRosa;
+document.getElementById("contadorRoxo").innerText = contadorRoxo;
 }
 
-document.getElementById("contadorAzul").textContent = contadorAzul;
 
